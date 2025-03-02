@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自动生成照片网页</title>
+    <style>
+        #input-area {
+            margin-bottom: 10px;
+        }
+
+        #generated-image {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="input-area">
+        <input type="text" id="prompt" placeholder="输入照片描述">
+        <button onclick="generateImage()">生成照片</button>
+    </div>
+    <img id="generated-image" src="">
+
+    <script>
+        function generateImage() {
+            const prompt = document.getElementById('prompt').value;
+            // 模拟后端返回数据
+            const mockResponse = {
+                image_url: 'https://example.com/generated-image.jpg'
+            };
+            document.getElementById('generated-image').src = mockResponse.image_url;
+        }
+    </script>
+</body>
+
+</html>
