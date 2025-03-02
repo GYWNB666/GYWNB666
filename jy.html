@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>和平精英冲刺战神段位计划表</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>和平精英冲刺战神段位计划表</h1>
+    <div id="plan-container"></div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const planContainer = document.getElementById('plan-container');
+            const data = [
+                {
+                    date: '2025-03-03',
+                    goal: '完成5场经典团队竞技，总击杀数达到100',
+                    condition: '场均KD不低于2'
+                },
+                {
+                    date: '2025-03-04',
+                    goal: '进行3场海岛地图四排，进入前3两次',
+                    condition: '个人淘汰数不少于5'
+                }
+            ];
+            data.forEach(plan => {
+                const planElement = document.createElement('div');
+                planElement.innerHTML = `<h3>${plan.date}</h3><p>目标: ${plan.goal}</p><p>完成条件: ${plan.condition}</p>`;
+                planContainer.appendChild(planElement);
+            });
+        });
+    </script>
+</body>
+
+</html>
