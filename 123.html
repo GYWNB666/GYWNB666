@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>电话号码户籍查询</title>
+</head>
+
+<body>
+    <input type="text" id="phoneNumber" placeholder="请输入电话号码">
+    <button onclick="query()">查询</button>
+    <div id="result"></div>
+
+    <script>
+        function query() {
+            const phoneNumber = document.getElementById('phoneNumber').value;
+            // 模拟后端返回数据，这里替换为实际的 API 调用逻辑
+            const mockResponse = {
+                address: '模拟户籍信息'
+            };
+            document.getElementById('result').innerHTML = mockResponse.address;
+        }
+    </script>
+</body>
+
+</html>
