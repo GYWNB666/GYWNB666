@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSGO2 AK47可燃冰价格记录</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        #chart-container {
+            width: 50%;
+            float: left;
+        }
+
+        #price-table {
+            width: 50%;
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>CSGO2 AK47可燃冰价格记录</h1>
+    <div id="chart-container">
+        <canvas id="priceChart"></canvas>
+    </div>
+    <div id="price-table">
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>时间</th>
+                    <th>价格</th>
+                </tr>
+            </thead>
+            <tbody id="priceTableBody"></tbody>
+        </table>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            fetch('/get-prices')
+             .then(response => response.json())
+             .then(data => {
